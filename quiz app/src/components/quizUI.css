@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(255, 82, 82);
+    color: white;
+    font-family: sans-serif;
+}
+
+.question-text{
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+button{
+    display: block;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: greenyellow;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+.score-section{
+    font-size: 2em;
+    background-color: rgb(255, 37, 37);
+    text-align: center;
+    text-transform: capitalize;
+color: black;
+
+padding: 20px 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
