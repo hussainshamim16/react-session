@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useNavigate } from 'react'
 import './todo.css'
+import Navigate from './navigate'
 
 
 // const del = () => {
@@ -42,6 +43,7 @@ function Todo() {
     let [arrval, setarr] = useState("kareem")
     let [arrayOfvalue, setArrVell] = useState([])
     let [listRender, setlistRender] = useState([])
+    let [navig] = useNavigate()
 
 
     // functional fnc 
@@ -61,20 +63,24 @@ function Todo() {
     // let [inputTodoVal,setTodoVal] = useState([])
     const saner = (elme) => {
         setarr(arrval = elme.target.value)
-          //arrayOfvalue.push(arrval)
-          //console.log(arrayOfvalue)
+        //arrayOfvalue.push(arrval)
+        //console.log(arrayOfvalue)
+    }
+
+    const naver = () => {nav = './navigate'
     }
 
     return (
         <div className='todo'>
-            <h1>Todo</h1>
+            {/* <h1>Todo</h1>
             <form action='#'>
                 <input type="text" placeholder='Enter your Todo' onChange={saner} value={arrval} />
-                <button onClick={sub}>Add</button>
+                <button onClick={sub}>navigate</button>
             </form>
             <ul>
                 <li>{listRender}<button onClick={del}>Delete</button><button onClick={edi}>Edit</button></li>
-            </ul>
+            </ul> */}
+            <button onClick={naver}>navigate</button>
         </div>
 
     )
