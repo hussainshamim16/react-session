@@ -17,6 +17,10 @@ const App = () => {
 
   // handle adding task
   const addTask = (event) => {
+    if(!inputVal.value){
+      alert("Enter Correct Todo")
+      return
+    }
     event.preventDefault();
     dispatch(add({
       title: inputVal.current.value
