@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
-import QuizUI from './components/QuizUI'
+// import QuizUI from './components/QuizUI'
+import Todo from './components/todo.jsx'
 
 // const App = () => {
 
@@ -96,12 +97,9 @@ import QuizUI from './components/QuizUI'
 function App() {
   return (
     <div className="App">
-      <h1 style={{
-        textAlign: "center",
-        color:"black",
-        fontSize:"3em"
-      }}>HTML Beginner Quiz</h1>
-      <QuizUI />
+      
+      {/* <QuizUI /> */}
+      <Todo />
     </div>
   );
 }
