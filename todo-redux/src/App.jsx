@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useRef, useState } from 'react';
+import { add, edit, remove } from './config/redux/todoSlice'
+import { useDispatch, useSelector } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+
+  // ref
+  const inputVal = useRef()
+
+  //dispatch
+  const dispatch = useDispatch()
+
+  //state
+  const todoData = useSelector((state) => state.todo.todo)
+
+  //on changing of todoData
+
+
+  const addTask = (event) => {
+    event.preventDefault()
+    dispatch(add({
+      title: inputVal.current.value
+    }))
+    // console.log(todoData)
+    inputVal.current.value = ''
+  }
+
+  useEffect(() => {
+    console.log("update todo data", todoData)
+  }, [todoData])
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>create task</h1>
+      <input type="text" placeholder='add task' ref={inputVal} />
+      <button onClick={() => addTask(event)}>add task</button>
+      <ul>
+        {console.log("ali bad",todoData)}
+        {
+          todoData.map((value, index) => {
+            // console.log("id",index)
+           return <li key={index}>{value.title} <button onClick={()=>dispatch(edit(index))}>edit</button> <button onClick={()=>dispatch(remove(index))}>Delete</button></li>
+          })
+        }
+      </ul>
     </>
   )
 }
 
 export default App
+
