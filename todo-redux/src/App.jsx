@@ -59,6 +59,16 @@ const App = () => {
     // console.log(todoData)
     inputVal.current.value = ''
   }
+  //  editer
+  const editer = (event)=>{
+    const promter = prompt("Enter Your Todo")
+    // console.log("editer",promter)
+    dispatch(edit({
+      title: promter,
+      event
+    }))
+    // console.log(todoData[event])
+  }
 
   return (
     // <>
@@ -98,7 +108,7 @@ const App = () => {
         {
           todoData.map((value, index) => {
             // console.log("id",index)
-           return <li key={index}>{value.title} <button onClick={()=>dispatch(edit(index))}>edit</button> <button onClick={()=>dispatch(remove(index))}>Delete</button></li>
+           return <li key={index}>{value.title} <button onClick={()=>editer(index)}>edit</button> <button onClick={()=>dispatch(remove(index))}>Delete</button></li>
           })
         }
       </ul>

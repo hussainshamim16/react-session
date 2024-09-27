@@ -49,12 +49,28 @@ const todoSlice = createSlice({
             })
         },
         edit: (state, action) => {
-            console.log("edited",state.todo.splice(action.payload,1,1))
+            // console.log("edited",state.todo.splice(action.payload,1,1))
             // const editVal = prompt("Enter Your Edited Value")
             // console.log(editVal)
+            // console.log(action.payload.title)
+            // state.todo[action.payload.indexer] = action.payload.title
+            // console.log(state.todo)
+            // let giveEdit = action.payload.title
+            // let indexNumber = action.payload.event
+            // let stater = state.todo
+            // console.log(stater[action.payload.indexer] = giveEdit)
+            // console.log(action.payload.event)
+            // console.log(state.todo.({
+            //     title:giveEdit
+            // }))
+
+            const {title,event} = action.payload
+            state.todo[event].title =  title
+
+            // console.log(state.todo)
         },
         remove: (state, action) => {
-            console.log(state.todo.splice(action.payload,1))
+            console.log(state.todo.splice(action.payload, 1))
         }
     }
 })
