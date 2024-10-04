@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 // import QuizUI from './components/QuizUI'
-import Todo from './components/todo.jsx'
+import Todo from './components/Todo.jsx'
 
 // const App = () => {
 
@@ -98,7 +98,7 @@ function App() {
   return (
     <div className="App">
       
-      {/* <QuizUI /> */}
+      {/* <QuizUI />     */}
       <Todo />
     </div>
   );
