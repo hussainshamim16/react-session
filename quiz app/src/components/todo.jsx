@@ -2,27 +2,23 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 const Todo = () => {
-    const [inputVal, setInputVel] = useState('Defaulter')
+    const [inputVal, setInputVel] = useState('')
     const [arrInput, setArr] = useState([])
 
-    // useEffect(() => { 
-
-    // console.log('change hua')
-
-    // }, [])
-
+    const valer = ()=>{
+        setInputVel('')
+    }
+    
     const valuGet = (event) => {
         setInputVel(event.target.value)
         console.log("valuGet", inputVal)
-
-
     }
-
+    
     const submitTodo = (event) => {
         // if(!inputVal){
-        //     alert("Enter Todo Value !")
-        //     event.preventDefault()
-        //     return
+            //     alert("Enter Todo Value !")
+            //     event.preventDefault()
+            //     return
         // }else{
         //     arrInput.push(inputVal)
         // }
@@ -38,10 +34,12 @@ const Todo = () => {
 
     const delet = (ev) => {
         // arrInput.splice(ev, 1)
-        console.log(arrInput)
-        console.log("delete", ev)
+        // console.log(arrInput)
+        arrInput.splice(ev,1)
+        console.log("delete", arrInput[ev])
+        setInputVel("  ")
     }
-
+    
     const edit = (ev) => {
         // const edit = prompt("enter your edit value")
         // const mergination = arrInput.splice(ev, 1, edit)
@@ -60,6 +58,7 @@ const Todo = () => {
                     placeholder='enter your todo'
                     onChange={valuGet}
                     value={inputVal}
+                    onFocus={valer}
                 />
                 <button type='submit' onClick={submitTodo}>add todo</button>
             </form>
