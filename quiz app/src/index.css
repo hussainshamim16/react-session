@@ -1,0 +1,15 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+button.delete{
+    border-radius: 3px;
+    border: 2px solid darkred;
+    background-color: darkred;
+    color: white;
+}
+button.edite{
+    border-radius: 3px;
+    border: 2px solid blue;
+    background-color: blue;
+    color: white;
+}
